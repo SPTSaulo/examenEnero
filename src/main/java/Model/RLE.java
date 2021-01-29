@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class RLE {
 
@@ -42,7 +43,19 @@ public class RLE {
 
     public static String decode(Tupla [] tuplas) {
         if(tuplas.length == 0) return "";
-        return String.valueOf(tuplas[0].getCharacter());
+        return generateDecodeString(tuplas);
+    }
+
+    private static String generateDecodeString(Tupla[] tuplas) {
+        String decodeString = "";
+        for (Tupla tupla: tuplas) {
+            decodeString += String.valueOf(tupla.getCharacter());
+        }
+        return decodeString;
+    }
+
+    public static String decodeCharacter(char c)  {
+        return String.valueOf(c);
     }
 
 }

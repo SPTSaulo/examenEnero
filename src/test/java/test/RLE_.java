@@ -42,4 +42,10 @@ public class RLE_ {
         Tupla [] tuplas = {new Tupla('g', 1)};
         assertThat(RLE.decode(tuplas)).isEqualTo("g");
     }
+
+    @Test
+    public void decode_multiples_tuplas_with_one_repetition_shoult_return_string_with_different_characters() {
+        Tupla [] tuplas = {new Tupla('p', 1), new Tupla('j', 1)};
+        assertThat(RLE.decode(tuplas)).isEqualTo("pj");
+    }
 }
