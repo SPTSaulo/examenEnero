@@ -1,28 +1,28 @@
 package Model;
 
 public class Tupla {
-    private char caracter;
-    private int repeticiones;
+    private char character;
+    private int repetitions;
 
     public Tupla(char caracter, int repeticiones) {
-        this.caracter = caracter;
-        this.repeticiones = repeticiones;
+        this.character = caracter;
+        this.repetitions = repeticiones;
     }
 
-    public char getCaracter() {
-        return caracter;
+    public char getCharacter() {
+        return character;
     }
 
-    public int getRepeticiones() {
-        return repeticiones;
+    public int getRepetitions() {
+        return repetitions;
     }
 
-    public void setRepeticiones(int repeticiones) {
-        this.repeticiones = repeticiones;
+    public void setRepetitions(int repetitions) {
+        this.repetitions = repetitions;
     }
 
     @Override
     public String toString() {
-        return "(" + repeticiones + ", " + caracter + ")";
+        return "(" + repetitions + ", " + character + ")";
     }
 }

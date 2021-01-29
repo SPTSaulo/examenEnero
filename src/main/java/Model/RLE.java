@@ -21,8 +21,8 @@ public class RLE {
 
     private static void removeContiguousTuplas(ArrayList<Tupla> tuplas) {
         for(int i = 0; i < tuplas.size()-1; i++) {
-            if(tuplas.get(i).getCaracter() == tuplas.get(i+1).getCaracter()) {
-                tuplas.get(i).setRepeticiones(tuplas.get(i).getRepeticiones()+1);
+            if(tuplas.get(i).getCharacter() == tuplas.get(i+1).getCharacter()) {
+                tuplas.get(i).setRepetitions(tuplas.get(i).getRepetitions()+1);
                 tuplas.remove(i+1);
             }
         }
@@ -41,7 +41,8 @@ public class RLE {
     }
 
     public static String decode(Tupla [] tuplas) {
-        return "";
+        if(tuplas.length == 0) return "";
+        return String.valueOf(tuplas[0].getCharacter());
     }
 
 }
