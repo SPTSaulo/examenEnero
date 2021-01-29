@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class RLE {
 
-    public static Tupla[] encode(String s) {
-        if(s.isEmpty()) return new Tupla[]{};
-        if(s.length() == 1) return encodeCharacter(s.charAt(0));
-        return generateTuplas(s);
+    public static Tupla[] encode(String input) {
+        if(input.isEmpty()) return new Tupla[]{};
+        if(input.length() == 1) return encodeCharacter(input.charAt(0));
+        return generateTuplas(input);
     }
 
-    private static Tupla[] generateTuplas(String s) {
+    private static Tupla[] generateTuplas(String input) {
         ArrayList<Tupla> tuplas = new ArrayList<>();
-        for (int i = 0; i < s.length(); i++) {
-            tuplas.add(new Tupla(s.charAt(i),1));
+        for (int i = 0; i < input.length(); i++) {
+            tuplas.add(new Tupla(input.charAt(i),1));
         }
         removeContiguousTuplas(tuplas);
         return generateTuplaArray(tuplas);

@@ -4,10 +4,6 @@ public class Tupla {
     private char caracter;
     private int repeticiones;
 
-    public int getRepeticiones() {
-        return repeticiones;
-    }
-
     public Tupla(char caracter, int repeticiones) {
         this.caracter = caracter;
         this.repeticiones = repeticiones;
@@ -15,6 +11,10 @@ public class Tupla {
 
     public char getCaracter() {
         return caracter;
+    }
+
+    public int getRepeticiones() {
+        return repeticiones;
     }
 
     public void setRepeticiones(int repeticiones) {
