@@ -4,6 +4,8 @@ import Model.RLE;
 import Model.Tupla;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class RLE_ {
@@ -13,6 +15,7 @@ public class RLE_ {
     }
     @Test
     public void encode_one_character_should_return_one_tuple() {
-        assertThat(RLE.encode("a")).isEqualTo(new Tupla[]{new Tupla('a',1)});
+        Tupla[] tuplas = {new Tupla('a',1)};
+        assertThat(Arrays.toString(RLE.encode("a"))).isEqualTo(Arrays.toString(tuplas));
     }
 }

@@ -24,4 +24,9 @@ public class Tupla {
     public void setRepeticiones(int repeticiones) {
         this.repeticiones = repeticiones;
     }
+
+    @Override
+    public String toString() {
+        return '(' + repeticiones + ", " + caracter +')';
+    }
 }
