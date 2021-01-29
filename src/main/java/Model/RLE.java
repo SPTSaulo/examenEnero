@@ -49,7 +49,15 @@ public class RLE {
     private static String generateDecodeString(Tupla[] tuplas) {
         String decodeString = "";
         for (Tupla tupla: tuplas) {
-            decodeString += String.valueOf(tupla.getCharacter());
+            decodeString += tupla.getRepetitions() > 1 ? decodeMultiplesTimes(tupla.getRepetitions(), tupla.getCharacter()) : decodeCharacter(tupla.getCharacter());
+        }
+        return decodeString;
+    }
+
+    private static String decodeMultiplesTimes(int repetitions, char character) {
+        String decodeString = "";
+        for(int i = 0; i < repetitions; i++) {
+            decodeString += character;
         }
         return decodeString;
     }

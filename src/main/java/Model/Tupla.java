@@ -1,7 +1,7 @@
 package Model;
 
 public class Tupla {
-    private char character;
+    private final char character;
     private int repetitions;
 
     public Tupla(char caracter, int repeticiones) {

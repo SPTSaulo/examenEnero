@@ -26,7 +26,7 @@ public class RLE_ {
     }
 
     @Test
-    public void encode_string_with_repeating_characters_should_return_a_tupla_with_counter_diferent_than_one(){
+    public void encode_string_with_repeating_characters_should_return_a_tupla_with_repetition_diferent_than_one(){
         Tupla[] tuplas = {new Tupla('h', 1), new Tupla('e', 1), new Tupla('l', 2), new Tupla('o', 1), new Tupla(' ', 1), new Tupla('w', 1) , new Tupla('o', 1), new Tupla('r', 1), new Tupla('l', 1), new Tupla('d', 1), new Tupla('!', 1)};
         assertThat(Arrays.toString(RLE.encode("hello world!"))).isEqualTo(Arrays.toString(tuplas));
     }
@@ -44,8 +44,14 @@ public class RLE_ {
     }
 
     @Test
-    public void decode_multiples_tuplas_with_one_repetition_shoult_return_string_with_different_characters() {
+    public void decode_multiples_tuplas_with_one_repetition_should_return_string_with_different_characters() {
         Tupla [] tuplas = {new Tupla('p', 1), new Tupla('j', 1)};
         assertThat(RLE.decode(tuplas)).isEqualTo("pj");
+    }
+
+    @Test
+    public void decode_multiple_tuplas_with_different_repetitions_should_return_string_with_same_adjacent_characters() {
+        Tupla [] tuplas = {new Tupla('a', 8) ,new Tupla('b', 3)};
+        assertThat(RLE.decode(tuplas)).isEqualTo("aaaaaaaabbb");
     }
 }
