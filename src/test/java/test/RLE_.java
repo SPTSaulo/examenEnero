@@ -30,4 +30,10 @@ public class RLE_ {
         Tupla[] tuplas = {new Tupla('h', 1), new Tupla('e', 1), new Tupla('l', 2), new Tupla('o', 1), new Tupla(' ', 1), new Tupla('w', 1) , new Tupla('o', 1), new Tupla('r', 1), new Tupla('l', 1), new Tupla('d', 1), new Tupla('!', 1)};
         assertThat(Arrays.toString(RLE.encode("hello world!"))).isEqualTo(Arrays.toString(tuplas));
     }
+
+    @Test
+    public void decode_empty_array_should_return_empty_string() {
+        Tupla [] tuplas = {};
+        assertThat(RLE.decode(tuplas)).isEqualTo("");
+    }
 }

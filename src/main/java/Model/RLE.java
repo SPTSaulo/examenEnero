@@ -40,4 +40,8 @@ public class RLE {
         return new Tupla[]{new Tupla(c,1)};
     }
 
+    public static String decode(Tupla [] tuplas) {
+        return "";
+    }
+
 }
