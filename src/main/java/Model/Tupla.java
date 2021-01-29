@@ -27,6 +27,6 @@ public class Tupla {
 
     @Override
     public String toString() {
-        return '(' + repeticiones + ", " + caracter +')';
+        return "(" + repeticiones + ", " + caracter + ")";
     }
 }
