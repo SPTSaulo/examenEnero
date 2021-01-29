@@ -15,7 +15,17 @@ public class RLE {
         for (int i = 0; i < s.length(); i++) {
             tuplas.add(new Tupla(s.charAt(i),1));
         }
+        removeContiguousTuplas(tuplas);
         return generateTuplaArray(tuplas);
+    }
+
+    private static void removeContiguousTuplas(ArrayList<Tupla> tuplas) {
+        for(int i = 0; i < tuplas.size()-1; i++) {
+            if(tuplas.get(i).getCaracter() == tuplas.get(i+1).getCaracter()) {
+                tuplas.get(i).setRepeticiones(tuplas.get(i).getRepeticiones()+1);
+                tuplas.remove(i+1);
+            }
+        }
     }
 
     private static Tupla[] generateTuplaArray(ArrayList<Tupla> tuplas) {
